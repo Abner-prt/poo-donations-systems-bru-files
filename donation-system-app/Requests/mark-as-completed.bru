@@ -1,0 +1,15 @@
+meta {
+  name: mark-as-completed
+  type: http
+  seq: 3
+}
+
+put {
+  url: http://localhost:5005/api/requests/3
+  body: none
+  auth: none
+}
+
+docs {
+  con este endpoint actualizamos una solicitud buscando por su "id" y revisamos que no este ya terminada para luego cambiarle el estado a "Completed" y guardar los cambios en la base de datos
+}

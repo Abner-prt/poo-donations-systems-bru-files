@@ -1,0 +1,15 @@
+meta {
+  name: get-all-completed
+  type: http
+  seq: 4
+}
+
+get {
+  url: http://localhost:5005/api/requests/completed
+  body: none
+  auth: none
+}
+
+docs {
+  aqui hacemos un get parecido al de pendientes pero esta vez filtramos solo las solicitudes que ya tienen el estado de "Completed" para poder ver cuales instituciones ya recibieron su ayuda
+}

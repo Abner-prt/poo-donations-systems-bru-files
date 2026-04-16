@@ -1,0 +1,20 @@
+meta {
+  name: List All Donors
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://localhost:5000/api/donors
+  body: none
+  auth: none
+}
+
+docs {
+   GET /api/donors
+  
+  Este endpoint es una solicitud de solo lectura que extrae de la base de datos SQLite la lista de todos los donantes que se han registrado (su nombre, id, compañía, detalles y fechas de adhesión). 
+  
+   Códigos de Respuesta Esperados
+  - 200 OK: Devuelve siempre un código afirmativo al listar satisfactoriamente.
+}

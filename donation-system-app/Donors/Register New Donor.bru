@@ -1,0 +1,36 @@
+meta {
+  name: Register New Donor
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:5000/api/donors
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Juan Perez",
+    "email": "juan.perez@gmail.com",
+    "phone": "99887766",
+    "type": "Person"
+  }
+}
+
+docs {
+   POST /api/donors
+  
+  Este endpoint se encarga de crear el registro de un nuevo "Donante" en la base de datos de nuestro sistema. Toma los parámetros obligatorios a través del Body (Payload) y auto-genera su fecha de alta (RegisteredAt) desde el controlador mediante el Mapper (DonorMapper).
+  
+   Estructura  
+  - name: Nombre completo del donante o Empresa.
+  - email: Correo de contacto primario.
+  - phone: Número telefónico para comunicaciones futuras.
+  - type: Especificar "Person" si es individuo, o "Company" si es corporativo.
+  
+   Códigos de Respuesta Esperados
+  - 200 OK: Se insertó el donante correctamente y retorna el mismo objeto (Entity) con su nuevo Id de base de datos generado y fecha en el servidor.
+  - 400 Bad Request: Ocurrirá si el modelo (DTO) se envía incompleto o con tipos de datos inválidos que las reglas lógicas no puedan procesar. 
+}

@@ -1,0 +1,15 @@
+meta {
+  name: get-all-pending
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://localhost:5005/api/requests
+  body: none
+  auth: none
+}
+
+docs {
+  aqui hacemos un get para buscar en la base de datos y traer todas las solicitudes de ayuda que aun tienen el estado de "Pending" usando una consulta sencilla para devolver la lista en formato JSON
+}
