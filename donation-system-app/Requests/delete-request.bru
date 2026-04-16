@@ -1,0 +1,16 @@
+meta {
+  name: Delete Request
+  type: http
+  seq: 5
+}
+
+delete {
+  url: http://localhost:5005/api/requests/1
+  body: none
+  auth: none
+}
+
+docs {
+  # Endpoint: DELETE /api/requests/{id}
+  Elimina el registro de una solicitud de ayuda de institucion basandose en el ID proporcionado.
+}

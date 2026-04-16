@@ -1,0 +1,16 @@
+meta {
+  name: Delete Donor
+  type: http
+  seq: 3
+}
+
+delete {
+  url: http://localhost:5005/api/donors/1
+  body: none
+  auth: none
+}
+
+docs {
+  # Endpoint: DELETE /api/donors/{id}
+  Elimina fisicamente de la base de datos a un donante buscando por su ID correlativo.
+}
