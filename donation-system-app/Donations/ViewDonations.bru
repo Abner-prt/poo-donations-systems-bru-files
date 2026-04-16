@@ -1,0 +1,16 @@
+meta {
+  name: ViewDonations
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://localhost:5005/api/donations
+  body: none
+  auth: none
+}
+
+docs {
+  - Consulta la base de datos y devuelve una lista con todas las donaciones que se han registrado hasta el momento.
+  - Es una operacion de solo lectura simple. Trae campos como la fecha, el tipo, la cantidad y el estado actual de cada registro.
+}

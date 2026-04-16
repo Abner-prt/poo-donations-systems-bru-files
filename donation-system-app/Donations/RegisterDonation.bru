@@ -1,0 +1,27 @@
+meta {
+  name: RegisterDonation
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:5005/api/donations
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "donorId": 1,
+    "type": "Efectivo (Lps)",
+    "description": "Donacion para Hospital Occidente",
+    "quantity": 250.75
+  }
+}
+
+docs {
+  - Crea un nuevo registro de donacion vinculado a un donante especifico.
+  - Primero verifica si el donorId que enviaste existe en la tabla de Donantes. Si no existe, detiene el proceso y devuelve un error (400 Bad Request).
+  - Si el donante es valido, el sistema asigna automaticamente: La fecha actual (UTC), El estado inicial como "Available" (Disponible).
+  - Guarda la información en la base de datos y devuelve el objeto completo ya con su ID generado.
+}

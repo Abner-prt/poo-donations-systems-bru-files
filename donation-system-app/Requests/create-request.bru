@@ -1,0 +1,24 @@
+meta {
+  name: create-request
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:5005/api/requests
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "institutionName": "Hospital Dku",
+    "description": "100 millones de lempiras",
+    "needType": "Money",
+    "requestedQuantity": 100
+  }
+}
+
+docs {
+  este endpoint sirve para guardar una nueva solicitud en la base de datos usando el RequestDto y revisa que el tipo de necesidad sea solamente "Money" o "Item" guardando la solicitud con el estado de "Pending" y la hora actual
+}

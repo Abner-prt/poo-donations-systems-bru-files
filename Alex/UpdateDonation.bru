@@ -1,0 +1,22 @@
+meta {
+  name: UpdateDonation
+  type: http
+  seq: 3
+}
+
+put {
+  url: http://localhost:5005/api/donations/1
+  body: json
+  auth: none
+}
+
+body:json {
+  "Available"
+}
+
+docs {
+  - Cambia la situacion de una donacion especifica  (por ejemplo, de "Disponible (Available)" a "Entregada (delibered)").
+  - Solo permite dos valores exactos: "Available" o "Delivered". No deja poner cualquier texto al azar
+  - Busca la donación por el ID que pasas en la URL. si tiene exito, guarda el cambio y te avisa que se actualizo.
+  - Si el ID no existe o el texto del estado es invalido, te responde con un error indicando que no se pudo realizar la operacion.
+}
