@@ -1,0 +1,16 @@
+meta {
+  name: Delete Donation
+  type: http
+  seq: 4
+}
+
+delete {
+  url: http://localhost:5005/api/donations/1
+  body: none
+  auth: none
+}
+
+docs {
+  # Endpoint: DELETE /api/donations/{id}
+  Elimina el registro de una donacion fisica o de dinero basandose en el ID proporcionado.
+}
